@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static util.StaticValue.PATH_PROD;
 
 public class GetProducts extends BaseTest {
@@ -21,7 +22,7 @@ public class GetProducts extends BaseTest {
                 .getBody()
                 .as(ResponseProductsDTO.class);
 
-        //assertNotNull
+        assertNotNull(responseProduct.products());
     }
     @Test
     @DisplayName("GET /products/{id} - Search for a product by it's ID - 200")
